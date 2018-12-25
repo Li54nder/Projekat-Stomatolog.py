@@ -26,30 +26,11 @@ def pronadjiUslugu(naziv):
             return usluga
     return -1
 
-# def proizvodtostr(rob):
-#     return "|" .join([rob["sifra"],rob["ime"],rob["cena"],rob["kolicina"]])         
-# 
-# def formatHeader():
-#     return \
-#     "Sifra    |Ime          |Cena   |Kolicina \n"\
-#     "--------|-------------|-------|--------"
-#     
-# def formatRoba(rob):
-#     return u"{0:8}|{1:13}|{2:7}|{3:8}".format(
-#         rob["sifra"],
-#         rob["ime"],
-#         rob["cena"],
-#         rob["kolicina"])  
-#     
-# def formatRoba1(robaList):
-#     r = ""
-#     for rob in robaList:
-#         r += formatRoba(rob) + '\n'
-#     return r
-# 
-# def formatAllRoba():
-#     return formatRoba1(roba)    
-#  
+def pregledUFajl(usluga):
+    tmp1 = usluga["intervencija"]
+    tmp2 = usluga["cena"]
+    return "Intervencija {} po ceni od {:6.2f}\u20ac".format(tmp1, tmp2)
+
 # def sort(robaList,kljuc,start):
 #     minPos=findMin(robaList,kljuc,start)
 #     if minPos==-1:
@@ -58,40 +39,28 @@ def pronadjiUslugu(naziv):
 #     if start < len(robaList)-1:
 #         sort(robaList,kljuc,start+1)
 #     return
-# 
-# def sortProizvodi(kljuc):
-#     sort(roba,kljuc,0)        
-#         
-# def findMin(robaList,kljuc,start):
-#     n=len(robaList)
-#     if n==0:
-#         return -1
-#     if n<=start:
-#         return -1
-#     if n-start==1:
-#         return start    
-#     min=robaList[start]
-#     minPos=start
-#     for i in range(start+1,n):
-#         if robaList[i][kljuc]<min[kljuc]:
-#             min=robaList[i]
-#             minPos=i
-#     return minPos
-# 
-# def minusStanje(rob,kolicina):
-#     
-#     if eval(rob['kolicina']) >= kolicina:
-#         rob['kolicina']=str(int(rob['kolicina'])-kolicina)
-#         print("Roba", rob['sifra']," je smanjena na stanju")
-#     else:
-#         print("Ima manje robe na stanju nego sto ste uneli!")
-#     
-#     
-#     
-# def plusStanje(rob,kolicina):
-#     rob["kolicina"]=str(int(rob["kolicina"])+kolicina)
-
+def sortirajUsluge():
+    sortiraj(0)
     
+def sortiraj(pos):
+    minPos = najjeftinijaUsluga(pos)
+    if minPos != -1:
+        usluge[pos], usluge[minPos] = usluge[minPos], usluge[pos]
+        if pos < len(usluge) - 1:
+            sortiraj(pos + 1)
+    return
+
+def najjeftinijaUsluga(pos):
+    n = len(usluge)
+    if n <= pos: return -1
+    minPos = pos
+    minC = usluge[minPos]
+    for i in range(pos+1, n):
+        if usluge[i]["cena"] < minC["cena"]:
+            minC = usluge[i]
+            minPos = i
+    return minPos
+  
      
 print(__name__)
 usluge=[]  

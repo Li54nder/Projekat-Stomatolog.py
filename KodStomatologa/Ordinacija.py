@@ -3,6 +3,7 @@
 '''
 
 from KodStomatologa import Stomatolog, Usluge, Cekaonica
+from KodStomatologa.Cekaonica import cekaonica
 
     
 def login():
@@ -88,17 +89,22 @@ def pustiPrekoReda():
 def odradiPregled():
     print("\n5 - ODRADI PREGLED...\n")
     global zarada
+    if not cekaonica:
+        print("Cekaonica je prazna!") 
+        return
     nazivIntervencije = Cekaonica.cekaonica[0]["intervencije"]
     zaradaOdPregleda = Cekaonica.odradiPregled(nazivIntervencije)
+    usluga = Usluge.pronadjiUslugu(nazivIntervencije)
     if(zarada != (zarada+zaradaOdPregleda)):
         zarada += zaradaOdPregleda
-        pregledi.append({"Intervencija: ": nazivIntervencije})
+        pregledi.append({"intervencija": nazivIntervencije, "cena": usluga["cena"]})
     return
 
 def stampajUsluge():
-    print("\nUsluge koje imamo na raspolaganju su:'n")
+    print("\nUsluge koje imamo na raspolaganju sortirane po ceni rastuce su:\n")
+    Usluge.sortirajUsluge()
     for usluga in Usluge.usluge:
-        print(" -> ",usluga["nazivIntervencije"])
+        print(" -> ",usluga["nazivIntervencije"], usluga["cena"])
     print()
 
 def zaradjenaSuma():
@@ -107,9 +113,10 @@ def zaradjenaSuma():
 
 def obavljeniPregledi():
     print('\nObavljeni pregledi ce se zavesti u knjigu pregleda...\nLjude koje niste pregledali poslali smo kucama...\n')
-    with open('KnjigaObavljenihPregleda.txt', 'w') as f:
+    with open('KnjigaObavljenihPregleda.txt', 'a') as f:
+        f.write("Obavljeni pregldedi:\n")
         for pregled in pregledi:
-            f.write("%s\n" % pregled)
+            f.write("%s\n" % Usluge.pregledUFajl(pregled))
     return
 
 print(__name__)
