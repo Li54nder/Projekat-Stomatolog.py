@@ -1,0 +1,22 @@
+(Oralna hirurgija) | Rutinsko vadjenje zuba | €20.00
+(Oralna hirurgija) | Komplikovano vadjenje zuba | €30.00
+(Oralna hirurgija) | Vadjenje impaktiranog umnjaka | €100.00
+(Oralna hirurgija) | Vadjenje impaktiranog ocnjaka | €100.00
+(Oralna hirurgija) | Resekcija zuba | €100.00
+(Terapija paradontopatije) | Uklanjanje mekih i cvrstih naslaga sa zuba | €20,00
+(Terapija paradontopatije) | Obrada paradontalnih dzepova u lokalnoj anesteziji (po zubu) | €10,00
+(Terapija paradontopatije) | Terapija akutnog parodontalnog apscesa (drenaza) | €20,00
+(Bolesti zuba) | Kompozitni ispun - jednopovrsinski | €20,00
+(Bolesti zuba) | Kompozitni ispun - dvopovrsinski | €25,00
+(Bolesti zuba) | Kompozitni ispun - tropovrsinski | €30,00
+(Bolesti zuba) | Aplikacija leka | €10,00
+(Bolesti zuba) | Okuzalni splint (bruksizam, sportisti) | €100,00
+(Protetika) | Metalokeramicka krunica | €90,00
+(Protetika) | Metalokeramicka krunica na implantatima | €110,00
+(Protetika) | Bezmetalna keramicka krunica | €190,00
+(Protetika) | Livena nadogradnja | €50,00
+(Protetika) | Privremeni most – po clanu | €15,00
+(Protetika) | Totalna proteza | €300,00
+(Protetika) | Parcijalna skeletirana proteza | €390,00
+(Estetska stomatologija) | Lasersko beljenje zuba | €150,00
+(Estetska stomatologija) | Kucno beljenje zuba | €150,00

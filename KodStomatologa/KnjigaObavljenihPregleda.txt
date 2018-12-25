@@ -1,0 +1,5 @@
+{'Intervencija: ': 'Rutinsko vadjenje zuba'}
+{'Intervencija: ': 'Terapija akutnog parodontalnog apscesa (drenaza)'}
+{'Intervencija: ': 'Resekcija zuba'}
+
+
