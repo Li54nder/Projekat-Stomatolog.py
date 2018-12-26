@@ -31,14 +31,6 @@ def pregledUFajl(usluga):
     tmp2 = usluga["cena"]
     return "Intervencija {} po ceni od {:6.2f}\u20ac".format(tmp1, tmp2)
 
-# def sort(robaList,kljuc,start):
-#     minPos=findMin(robaList,kljuc,start)
-#     if minPos==-1:
-#         return
-#     robaList[start],robaList[minPos]=robaList[minPos],robaList[start]
-#     if start < len(robaList)-1:
-#         sort(robaList,kljuc,start+1)
-#     return
 def sortirajUsluge():
     sortiraj(0)
     

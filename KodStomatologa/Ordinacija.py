@@ -66,11 +66,11 @@ def brLjudiUCekaonici():
 def ljudiUCekaonici():
     print("\n2 - Ko sve ceka u redu\n")
     for osoba in Cekaonica.cekaonica:
-        print(osoba)
+        print(Cekaonica.toStr(osoba))
     return
 
 def dodajOsobuURed():
-    print("\n3 - Dodaj osobu u red\n>>>Podaci o osobi:")
+    print("\n3 - Dodaj osobu u red\n\n>>>Podaci o osobi:")
     imeIPrezime = input("Ime i prezime\n>>> ")
     intervencija = input("Intervencija koju osoba zeli da izvrsi\n(ako niste sigurni unesite: \"odustajem\" i pogledajte koje intervencije imamo na raspolaganju)\n>>> ")
     if intervencija.lower() == "odustajem":
@@ -104,12 +104,12 @@ def stampajUsluge():
     print("\nUsluge koje imamo na raspolaganju sortirane po ceni rastuce su:\n")
     Usluge.sortirajUsluge()
     for usluga in Usluge.usluge:
-        print(" -> ",usluga["nazivIntervencije"], usluga["cena"])
+        print(" -> {} = {:6.2f}\u20ac".format(usluga["nazivIntervencije"], usluga["cena"]))
     print()
 
 def zaradjenaSuma():
     print("\n6 - Pogledaj dosadasnju zaradjenu sumu\n")
-    print("Dosadasnja zaradjena suma novca je:",zarada)
+    print("Dosadasnja zaradjena suma novca je: {:6.2f}\u20ac".format(zarada))
 
 def obavljeniPregledi():
     print('\nObavljeni pregledi ce se zavesti u knjigu pregleda...\nLjude koje niste pregledali poslali smo kucama...\n')

@@ -23,6 +23,9 @@ def fromStr(ln):
     }
     return pacijent
 
+def toStr(osoba):
+    return "Osoba {} ceka za {} i ima budzet od {:6.2f}\u20ac".format(osoba["imeIPrezime"], osoba["intervencije"], osoba["budzet"])
+
 def propusiDrugog(): #Propustanje sa verovatnocom od 20%
     randomBr = randint(0, 100)
     if(randomBr < 20):
@@ -55,7 +58,7 @@ def odradiPregled(naziv):
         print("Trazenu uslugu nemamo u ponudi...Sledeci!")
     return cena
 
-def toStr(pacijent):
+def toStrZaFajl(pacijent):
     return " | " .join([pacijent["imeIPrezime"], pacijent["intervencije"], pacijent["budzet"]])         
 
 print(__name__)
